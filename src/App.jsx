@@ -15,9 +15,19 @@ function App() {
         <fieldset>
             <img src="" alt="strawberry"/>
             Aardbeien
-            <button></button>
+            <button
+                type="button"
+                onClick={() => setStrawberryCount(strawberryCount.valueOf()-1)}
+            >
+                -
+            </button>
             {strawberryCount}
-            <button></button>
+            <button
+                type="button"
+                onClick={() => setStrawberryCount(strawberryCount.valueOf()+1)}
+            >
+                +
+            </button>
         </fieldset>
         <fieldset>
             <img src="" alt="banana"/>
