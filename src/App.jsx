@@ -17,44 +17,34 @@ function App() {
   return (
     <>
         <h1>Fruitmand bezorgservice</h1>
-        <fieldset>
+        <article>
             <img src={strawberryIcon} alt="strawberry"/>
             Aardbeien
-            <button
-                type="button"
-                onClick={() => setStrawberryCount(strawberryCount.valueOf()-1)}
-            >
-                -
-            </button>
+            <button type="button" onClick={() => setStrawberryCount(strawberryCount.valueOf()-1)}>-</button>
             {strawberryCount}
-            <button
-                type="button"
-                onClick={() => setStrawberryCount(strawberryCount.valueOf()+1)}
-            >
-                +
-            </button>
-        </fieldset>
-        <fieldset>
+            <button type="button" onClick={() => setStrawberryCount(strawberryCount.valueOf()+1)}>+</button>
+        </article>
+        <article>
             <img src={bananaIcon} alt="banana"/>
             Bananen
-            <button></button>
+            <button type="button" onClick={() => setBananaCount(bananaCount.valueOf()-1)}>-</button>
             {bananaCount}
-            <button></button>
-        </fieldset>
-        <fieldset>
+            <button type="button" onClick={() => setBananaCount(bananaCount.valueOf()+1)}>+</button>
+        </article>
+        <article>
             <img src={appleIcon} alt="apple"/>
             Appels
-            <button></button>
+            <button type="button" onClick={() => setAppleCount(appleCount.valueOf()-1)}>-</button>
             {appleCount}
-            <button></button>
-        </fieldset>
-        <fieldset>
+            <button type="button" onClick={() => setAppleCount(appleCount.valueOf()+1)}>+</button>
+        </article>
+        <article>
             <img src={kiwiIcon} alt="kiwi"/>
             Kiwi's
-            <button></button>
+            <button type="button" onClick={() => setKiwiCount(kiwiCount.valueOf()-1)}>-</button>
             {kiwiCount}
-            <button></button>
-        </fieldset>
+            <button type="button" onClick={() => setKiwiCount(kiwiCount.valueOf()+1)}>+</button>
+        </article>
     </>
   )
 }
