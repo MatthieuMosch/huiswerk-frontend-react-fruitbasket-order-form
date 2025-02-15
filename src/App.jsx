@@ -1,6 +1,6 @@
 
-import './App.css'
 import {useState} from "react";
+import Article from "./components/atricle/Article.jsx";
 
 import strawberryIcon from './assets/strawberry.png';
 import bananaIcon from './assets/banana.png';
@@ -17,34 +17,10 @@ function App() {
   return (
     <>
         <h1>Fruitmand bezorgservice</h1>
-        <article>
-            <img src={strawberryIcon} alt="strawberry"/>
-            Aardbeien
-            <button type="button" onClick={() => setStrawberryCount(strawberryCount.valueOf()-1)}>-</button>
-            {strawberryCount}
-            <button type="button" onClick={() => setStrawberryCount(strawberryCount.valueOf()+1)}>+</button>
-        </article>
-        <article>
-            <img src={bananaIcon} alt="banana"/>
-            Bananen
-            <button type="button" onClick={() => setBananaCount(bananaCount.valueOf()-1)}>-</button>
-            {bananaCount}
-            <button type="button" onClick={() => setBananaCount(bananaCount.valueOf()+1)}>+</button>
-        </article>
-        <article>
-            <img src={appleIcon} alt="apple"/>
-            Appels
-            <button type="button" onClick={() => setAppleCount(appleCount.valueOf()-1)}>-</button>
-            {appleCount}
-            <button type="button" onClick={() => setAppleCount(appleCount.valueOf()+1)}>+</button>
-        </article>
-        <article>
-            <img src={kiwiIcon} alt="kiwi"/>
-            Kiwi's
-            <button type="button" onClick={() => setKiwiCount(kiwiCount.valueOf()-1)}>-</button>
-            {kiwiCount}
-            <button type="button" onClick={() => setKiwiCount(kiwiCount.valueOf()+1)}>+</button>
-        </article>
+        <Article title="Aardbeien" img={strawberryIcon} count={strawberryCount} handleClick={setStrawberryCount}/>
+        <Article title="Bananen" img={bananaIcon} count={bananaCount} handleClick={setBananaCount}/>
+        <Article title="Appels" img={appleIcon} count={appleCount} handleClick={setAppleCount}/>
+        <Article title="Kiwi's" img={kiwiIcon} count={kiwiCount} handleClick={setKiwiCount}/>
     </>
   )
 }
