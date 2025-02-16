@@ -1,6 +1,6 @@
 
 import {useState} from "react";
-import Article from "./components/atricle/Article.jsx";
+import FruitArticle from "./components/fruitAtricle/FruitArticle.jsx";
 
 import strawberryIcon from './assets/strawberry.png';
 import bananaIcon from './assets/banana.png';
@@ -17,10 +17,10 @@ function App() {
   return (
     <>
         <h1>Fruitmand bezorgservice</h1>
-        <Article title="Aardbeien" img={strawberryIcon} count={strawberryCount} handleClick={setStrawberryCount}/>
-        <Article title="Bananen" img={bananaIcon} count={bananaCount} handleClick={setBananaCount}/>
-        <Article title="Appels" img={appleIcon} count={appleCount} handleClick={setAppleCount}/>
-        <Article title="Kiwi's" img={kiwiIcon} count={kiwiCount} handleClick={setKiwiCount}/>
+        <FruitArticle title="Aardbeien" img={strawberryIcon} counter={strawberryCount} handleClick={setStrawberryCount}/>
+        <FruitArticle title="Bananen" img={bananaIcon} counter={bananaCount} handleClick={setBananaCount}/>
+        <FruitArticle title="Appels" img={appleIcon} counter={appleCount} handleClick={setAppleCount}/>
+        <FruitArticle title="Kiwi's" img={kiwiIcon} counter={kiwiCount} handleClick={setKiwiCount}/>
     </>
   )
 }

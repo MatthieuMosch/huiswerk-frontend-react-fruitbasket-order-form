@@ -1,13 +1,13 @@
-// Button component
+// CounterButton component
 //
 
-function Button({count, adjust, handleClick, children}) {
+function CounterButton({counter, adjust, handleClick, children}) {
     return (
         <button
             type="button"
             onClick={() => {
                 // do nothing if the result would be below 0
-                (count + adjust) >= 0 && handleClick(count + adjust)}
+                counter >= -adjust && handleClick(counter + adjust)}
             }
         >
             {children}
@@ -15,4 +15,4 @@ function Button({count, adjust, handleClick, children}) {
     );
 }
 
-export default Button;
+export default CounterButton;
