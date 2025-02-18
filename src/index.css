@@ -4,3 +4,30 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-size: 40px;
+}
+
+button {
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+select {
+    border: 2px solid black;
+    height: 40px;
+    font-size: 30px;
+}
+
+input[type=radio] {
+    margin: 20px;
+    height: 2em;
+    width: 2em;
+}
+
+input[type=checkbox] {
+    height: 2em;
+    width: 2em;
+}

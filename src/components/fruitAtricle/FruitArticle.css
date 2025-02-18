@@ -1,13 +1,12 @@
 .fruit-article{
     border: 2px solid black;
-    padding: 10px;
     border-radius: 10px;
     margin: 5px;
-    font-size: 50px;
     text-align: center;
 }
 
 .fruit-image {
     height: 50px;
     margin: 5px;
+    vertical-align: middle;
 }

@@ -16,6 +16,13 @@ function App() {
     const [appleCount, setAppleCount] = useState(0);
     const [kiwiCount, setKiwiCount] = useState(0);
 
+    function resetCount() {
+        setStrawberryCount(0);
+        setBananaCount(0);
+        setAppleCount(0);
+        setKiwiCount(0);
+    }
+
     const [formState, setFormState] = useState({
         firstname: '',
         lastname: '',
@@ -34,12 +41,6 @@ function App() {
 
     }
 
-    function resetCount() {
-        setAppleCount(0);
-        setBananaCount(0);
-        setAppleCount(0);
-        setAppleCount(0);
-    }
 
     return (
         <>
@@ -55,6 +56,39 @@ function App() {
                 <InputField title="Achternaam" id="lastname" value={formState.lastname} onChange={handleFormChange}/>
                 <InputField title="Leeftijd" type="number" id="age" value={formState.age} onChange={handleFormChange}/>
                 <InputField title="Postcode" type="zip" id="zip" value={formState.zip} onChange={handleFormChange}/>
+                <label htmlFor="frequence-select">
+                    <p>Bezorgfrequentie</p>
+                    <p>
+                        <select name="frequence" id="frequence-select">
+                            <option value="weekly" selected>Iedere week</option>
+                            <option value="biweekly">Om de week</option>
+                            <option value="monthly">Iedere maand</option>
+                        </select>
+                    </p>
+                </label>
+                <p>
+                    <label htmlFor="daytime">
+                        <input type="radio" id="daytime" name="delivery-time" value="daytime"/>
+                        Overdag
+                    </label>
+                    <label htmlFor="evening">
+                        <input type="radio" id="evening" name="delivery-time" value="evening"/>
+                        's Avonds
+                    </label>
+                </p>
+                <p>
+                    <label htmlFor="comment">
+                        <p>Opmerking:</p>
+                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                    </label>
+                </p>
+                <p>
+                    <label htmlFor="conditions">
+                        <input type="checkbox" id="conditions" name="conditions"/>
+                        Ik ga akkoord met de voorwaarden
+                    </label>
+                </p>
+                <button type="submit">Verzend</button>
             </form>
         </>
     )
