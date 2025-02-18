@@ -1,0 +1,10 @@
+.input-field {
+    width: 100%;
+    font-size: 50px;
+    margin: 5px;
+}
+
+.input-field input {
+    font-size: 40px;
+    margin: 5px;
+}

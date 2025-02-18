@@ -2,7 +2,7 @@
 // a button to change the value of counter
 // the value of the counter is not allowed to ge below 0
 
-import './CounterButton.css'
+import './CounterButton.css';
 
 function CounterButton({counter, adjust, handleClick, children}) {
     return (
