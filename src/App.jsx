@@ -21,6 +21,18 @@ function App() {
         <FruitArticle title="Bananen" img={bananaIcon} counter={bananaCount} handleClick={setBananaCount}/>
         <FruitArticle title="Appels" img={appleIcon} counter={appleCount} handleClick={setAppleCount}/>
         <FruitArticle title="Kiwi's" img={kiwiIcon} counter={kiwiCount} handleClick={setKiwiCount}/>
+        <button
+            type="button"
+            className="reset-button"
+            onClick={() => {
+                setAppleCount(0);
+                setBananaCount(0);
+                setAppleCount(0);
+                setAppleCount(0);
+            }}
+        >
+            Reset
+        </button>
     </>
   )
 }
