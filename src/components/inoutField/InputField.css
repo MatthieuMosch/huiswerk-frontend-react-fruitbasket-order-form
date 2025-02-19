@@ -3,6 +3,7 @@
     height: 1em;
     font-size: 1em;
     margin: 10px;
+    padding: 5px;
 }
 
 .input-field input:valid {
@@ -13,4 +14,9 @@
 .input-field input:invalid {
     border: 2px solid red;
     background-color: lightpink;
+}
+
+.textarea-field textarea {
+    font-size: 1em;
+    margin: 10px;
 }

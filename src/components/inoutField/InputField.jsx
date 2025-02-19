@@ -6,21 +6,39 @@
 
 import "./InputField.css";
 
-function InputField({type="text", pattern, name, title,value, onChange}) {
-    return (
-        <p className="input-field">
-            <label>
-                {title}
-                <input
-                    type={type}
+function InputField({type="text", pattern, name, title,value, cols, rows, onChange}) {
+    if (type === "textarea") {
+        return (
+            <label className="textarea-field">
+                <p>
+                    {title}
+                </p>
+                <textarea
                     name={name}
+                    cols={cols}
+                    rows={rows}
                     value={value}
-                    pattern={pattern}
                     onChange={onChange}
                 />
             </label>
-        </p>
-    );
+        );
+    } else {
+        return (
+            <p className="input-field">
+                <label>
+                    {title}
+                    <input
+                        type={type}
+                        name={name}
+                        value={value}
+                        pattern={pattern}
+                        onChange={onChange}
+                    />
+                </label>
+            </p>
+        );
+    }
+
 }
 
 export default InputField;

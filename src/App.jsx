@@ -86,12 +86,7 @@ function App() {
                         's Avonds
                     </label>
                 </p>
-                <div>
-                    <label>
-                        <p>Opmerking:</p>
-                        <textarea name="comment"cols="30" rows="10" value={formState.comment} onChange={handleFormChange}></textarea>
-                    </label>
-                </div>
+                <InputField type="textarea" name="comment" title="Opmerking:" cols="50" rows="10" value={formState.comment} onChange={handleFormChange}/>
                 <p>
                     <label>
                         <input type="checkbox" name="condition" checked={formState.condition} onChange={handleFormChange}/>
