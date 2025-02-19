@@ -5,16 +5,17 @@
 
 import "./InputField.css";
 
-function InputField({type="text", id, title,value, onChange}) {
+function InputField({type="text", pattern, name, title,value, onChange}) {
     return (
         <p className="input-field">
-            <label htmlFor={id}>
+            <label htmlFor={name}>
                 {title}
                 <input
                     type={type}
-                    name={id}
-                    id={id}
+                    name={name}
+                    id={name}
                     value={value}
+                    pattern={pattern}
                     onChange={onChange}
                 />
             </label>

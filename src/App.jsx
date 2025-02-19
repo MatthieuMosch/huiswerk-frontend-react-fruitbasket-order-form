@@ -24,22 +24,32 @@ function App() {
     }
 
     const [formState, setFormState] = useState({
-        firstname: '',
-        lastname: '',
+        firstname: "",
+        lastname: "",
         age: 0,
-        zip: '',
+        zip: "",
+        frequency: "weekly",
+        time: "daytime",
+        comment: "",
+        condition: true,
     });
 
     function handleFormChange(e) {
         setFormState({
             ...formState,
-            [e.target.name]: e.target.value,
+            [e.target.name]: event.target.type=== "checkbox" ? event.target.checked : e.target.value,
         });
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formState);
+        console.log("Strawberry: " + strawberryCount);
+        console.log("Banana: " + bananaCount);
+        console.log("Apple: " + appleCount);
+        console.log("Kiwi: " + kiwiCount);
+        for (const key in formState) {
+            console.log(key + ": " + formState[key]);
+        }
     }
 
 
@@ -52,14 +62,14 @@ function App() {
             <FruitArticle title="Kiwi's" img={kiwiIcon} counter={kiwiCount} handleClick={setKiwiCount}/>
             <button type="button" className="reset-button" onClick={() => resetCount()}>Reset</button>
             <form onSubmit={handleSubmit}>
-                <InputField title="Voornaam" id="firstname" value={formState.firstname} onChange={handleFormChange}/>
-                <InputField title="Achternaam" id="lastname" value={formState.lastname} onChange={handleFormChange}/>
-                <InputField title="Leeftijd" type="number" id="age" value={formState.age} onChange={handleFormChange}/>
-                <InputField title="Postcode" type="zip" id="zip" value={formState.zip} onChange={handleFormChange}/>
+                <InputField title="Voornaam" name="firstname" value={formState.firstname} onChange={handleFormChange}/>
+                <InputField title="Achternaam" name="lastname" value={formState.lastname} onChange={handleFormChange}/>
+                <InputField title="Leeftijd" type="number" name="age" value={formState.age} onChange={handleFormChange}/>
+                <InputField title="Postcode" type="zip" pattern="[1-9][0-9]{3} ?[a-z]{2}" name="zip" value={formState.zip} onChange={handleFormChange}/>
                 <label htmlFor="frequence-select">
                     <p>Bezorgfrequentie</p>
                     <p>
-                        <select name="frequence" id="frequence-select">
+                        <select name="frequency" id="frequency-select" value={formState.frequency} onChange={handleFormChange}>
                             <option value="weekly">Iedere week</option>
                             <option value="biweekly">Om de week</option>
                             <option value="monthly">Iedere maand</option>
@@ -67,24 +77,24 @@ function App() {
                     </p>
                 </label>
                 <p>
-                    <label htmlFor="daytime">
-                        <input type="radio" id="daytime" name="delivery-time" value="daytime"/>
+                    <label>
+                        <input type="radio" name="time" value="daytime" checked={formState.time === "daytime"} onChange={handleFormChange}/>
                         Overdag
                     </label>
-                    <label htmlFor="evening">
-                        <input type="radio" id="evening" name="delivery-time" value="evening"/>
+                    <label>
+                        <input type="radio" name="time" value="evening" checked={formState.time === "evening"} onChange={handleFormChange}/>
                         's Avonds
                     </label>
                 </p>
                 <div>
                     <label htmlFor="comment">
                         <p>Opmerking:</p>
-                        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+                        <textarea name="comment" id="comment" cols="30" rows="10" value={formState.comment} onChange={handleFormChange}></textarea>
                     </label>
                 </div>
                 <p>
-                    <label htmlFor="conditions">
-                        <input type="checkbox" id="conditions" name="conditions"/>
+                    <label>
+                        <input type="checkbox" name="condition" checked={formState.condition} onChange={handleFormChange}/>
                         Ik ga akkoord met de voorwaarden
                     </label>
                 </p>
