@@ -2,11 +2,11 @@
 // containing
 // - label with description
 // - input field
-// tried to set the zipcode pattern in here when the type==="zip" but I did not get the regex through via the props
+// tried to set the zipcode pattern in here when the type==="zip" but I could not get the regex through via the props
 
 import "./InputField.css";
 
-function InputField({type="text", pattern, name, title,value, cols, rows, onChange}) {
+function InputField({type="text", pattern, name, title, value, cols, rows, onChange}) {
     if (type === "textarea") {
         return (
             <label className="textarea-field">

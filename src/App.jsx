@@ -8,6 +8,7 @@ import bananaIcon from './assets/banana.png';
 import appleIcon from './assets/apple.png';
 import kiwiIcon from './assets/kiwi.png';
 import InputField from "./components/inoutField/InputField.jsx";
+import SelectField from "./components/selectField/SelectField.jsx";
 
 function App() {
 
@@ -66,16 +67,9 @@ function App() {
                 <InputField title="Achternaam" name="lastname" value={formState.lastname} onChange={handleFormChange}/>
                 <InputField title="Leeftijd" type="number" name="age" value={formState.age} onChange={handleFormChange}/>
                 <InputField title="Postcode" pattern="[1-9][0-9]{3} ?[a-zA-Z]{2}" name="zip" value={formState.zip} onChange={handleFormChange}/>
-                <label>
-                    <p>Bezorgfrequentie</p>
-                    <p>
-                        <select name="frequency" value={formState.frequency} onChange={handleFormChange}>
-                            <option value="weekly">Iedere week</option>
-                            <option value="biweekly">Om de week</option>
-                            <option value="monthly">Iedere maand</option>
-                        </select>
-                    </p>
-                </label>
+                <SelectField name="frequency" title="Bezorgfrequentie"
+                             options="weekly:iedere week,biweekly:om de week,monthly:iedere maand"
+                             value={formState.frequency} onChange={handleFormChange}/>
                 <p>
                     <label>
                         <input type="radio" name="time" value="daytime" checked={formState.time === "daytime"} onChange={handleFormChange}/>
