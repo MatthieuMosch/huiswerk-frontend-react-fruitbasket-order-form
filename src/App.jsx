@@ -37,7 +37,7 @@ function App() {
     function handleFormChange(e) {
         setFormState({
             ...formState,
-            [e.target.name]: event.target.type=== "checkbox" ? event.target.checked : e.target.value,
+            [e.target.name]: e.target.type=== "checkbox" ? e.target.checked : e.target.value,
         });
     }
 
@@ -65,11 +65,11 @@ function App() {
                 <InputField title="Voornaam" name="firstname" value={formState.firstname} onChange={handleFormChange}/>
                 <InputField title="Achternaam" name="lastname" value={formState.lastname} onChange={handleFormChange}/>
                 <InputField title="Leeftijd" type="number" name="age" value={formState.age} onChange={handleFormChange}/>
-                <InputField title="Postcode" type="zip" pattern="[1-9][0-9]{3} ?[a-z]{2}" name="zip" value={formState.zip} onChange={handleFormChange}/>
-                <label htmlFor="frequence-select">
+                <InputField title="Postcode" pattern="[1-9][0-9]{3} ?[a-zA-Z]{2}" name="zip" value={formState.zip} onChange={handleFormChange}/>
+                <label>
                     <p>Bezorgfrequentie</p>
                     <p>
-                        <select name="frequency" id="frequency-select" value={formState.frequency} onChange={handleFormChange}>
+                        <select name="frequency" value={formState.frequency} onChange={handleFormChange}>
                             <option value="weekly">Iedere week</option>
                             <option value="biweekly">Om de week</option>
                             <option value="monthly">Iedere maand</option>
@@ -87,9 +87,9 @@ function App() {
                     </label>
                 </p>
                 <div>
-                    <label htmlFor="comment">
+                    <label>
                         <p>Opmerking:</p>
-                        <textarea name="comment" id="comment" cols="30" rows="10" value={formState.comment} onChange={handleFormChange}></textarea>
+                        <textarea name="comment"cols="30" rows="10" value={formState.comment} onChange={handleFormChange}></textarea>
                     </label>
                 </div>
                 <p>
