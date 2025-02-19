@@ -1,6 +1,6 @@
 .input-field input {
     border: 2px solid black;
-    height: 40px;
-    font-size: 40px;
+    height: 1em;
+    font-size: 1em;
     margin: 10px;
 }

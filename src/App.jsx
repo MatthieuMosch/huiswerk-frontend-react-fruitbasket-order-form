@@ -37,16 +37,16 @@ function App() {
         });
     }
 
-    function handleSubmit() {
-
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(formState);
     }
 
 
     return (
         <>
             <h1>Fruitmand bezorgservice</h1>
-            <FruitArticle title="Aardbeien" img={strawberryIcon} counter={strawberryCount}
-                          handleClick={setStrawberryCount}/>
+            <FruitArticle title="Aardbeien" img={strawberryIcon} counter={strawberryCount} handleClick={setStrawberryCount}/>
             <FruitArticle title="Bananen" img={bananaIcon} counter={bananaCount} handleClick={setBananaCount}/>
             <FruitArticle title="Appels" img={appleIcon} counter={appleCount} handleClick={setAppleCount}/>
             <FruitArticle title="Kiwi's" img={kiwiIcon} counter={kiwiCount} handleClick={setKiwiCount}/>
@@ -60,7 +60,7 @@ function App() {
                     <p>Bezorgfrequentie</p>
                     <p>
                         <select name="frequence" id="frequence-select">
-                            <option value="weekly" selected>Iedere week</option>
+                            <option value="weekly">Iedere week</option>
                             <option value="biweekly">Om de week</option>
                             <option value="monthly">Iedere maand</option>
                         </select>
@@ -76,12 +76,12 @@ function App() {
                         's Avonds
                     </label>
                 </p>
-                <p>
+                <div>
                     <label htmlFor="comment">
                         <p>Opmerking:</p>
                         <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
                     </label>
-                </p>
+                </div>
                 <p>
                     <label htmlFor="conditions">
                         <input type="checkbox" id="conditions" name="conditions"/>
