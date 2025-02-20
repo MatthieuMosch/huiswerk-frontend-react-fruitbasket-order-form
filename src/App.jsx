@@ -2,14 +2,14 @@ import {useState} from "react";
 import "./App.css";
 
 import FruitArticle from "./components/fruitAtricle/FruitArticle.jsx";
+import InputField from "./components/inoutField/InputField.jsx";
+import SelectField from "./components/selectField/SelectField.jsx";
+import RadioField from "./components/radioField/RadioField.jsx";
 
 import strawberryIcon from './assets/strawberry.png';
 import bananaIcon from './assets/banana.png';
 import appleIcon from './assets/apple.png';
 import kiwiIcon from './assets/kiwi.png';
-import InputField from "./components/inoutField/InputField.jsx";
-import SelectField from "./components/selectField/SelectField.jsx";
-// import RadioField from "./components/radioField/RadioField.jsx";
 
 function App() {
 
@@ -71,17 +71,7 @@ function App() {
                 <SelectField name="frequency" title="Bezorgfrequentie"
                              options="weekly:iedere week,biweekly:om de week,monthly:iedere maand"
                              value={formState.frequency} onChange={handleFormChange}/>
-                {/*<RadioField name="time" options="daytime:Overdag,evening:'s Avonds" checked={formState.time} onChange={handleFormChange}/>*/}
-                <p>
-                    <label>
-                        <input type="radio" name="time" value="daytime" checked={formState.time === "daytime"} onChange={handleFormChange}/>
-                        Overdag
-                    </label>
-                    <label>
-                        <input type="radio" name="time" value="evening" checked={formState.time === "evening"} onChange={handleFormChange}/>
-                        's Avonds
-                    </label>
-                </p>
+                <RadioField name="time" options="daytime:Overdag,evening:'s Avonds" checked={formState.time} onChange={handleFormChange}/>
                 <InputField type="textarea" name="comment" title="Opmerking:" cols="50" rows="10" value={formState.comment} onChange={handleFormChange}/>
                 <p>
                     <label>

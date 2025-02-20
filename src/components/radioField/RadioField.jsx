@@ -8,11 +8,11 @@ function RadioField({name, options, checked, onChange}) {
         <p>
             {options.split(",").map((option) => {
                 const opt = option.split(":");
-                return
-                <label>
+                return (
+                <label key={opt[0]}>
                     <input type="radio" name={name} value={opt[0]} checked={checked === opt[0]} onChange={onChange}/>
                     {opt[1]}
-                </label>;
+                </label>);
             })}
         </p>
     );
