@@ -10,6 +10,7 @@ import strawberryIcon from './assets/strawberry.png';
 import bananaIcon from './assets/banana.png';
 import appleIcon from './assets/apple.png';
 import kiwiIcon from './assets/kiwi.png';
+import CheckField from "./components/checkField/CheckField.jsx";
 
 function App() {
 
@@ -73,12 +74,7 @@ function App() {
                              value={formState.frequency} onChange={handleFormChange}/>
                 <RadioField name="time" options="daytime:Overdag,evening:'s Avonds" checked={formState.time} onChange={handleFormChange}/>
                 <InputField type="textarea" name="comment" title="Opmerking:" cols="50" rows="10" value={formState.comment} onChange={handleFormChange}/>
-                <p>
-                    <label>
-                        <input type="checkbox" name="condition" checked={formState.condition} onChange={handleFormChange}/>
-                        Ik ga akkoord met de voorwaarden
-                    </label>
-                </p>
+                <CheckField name="condition" title="Ik ga akkoord met de voorwaarden" checked={formState.condition} onChange={handleFormChange}/>
                 <button type="submit">Verzend</button>
             </form>
         </>
