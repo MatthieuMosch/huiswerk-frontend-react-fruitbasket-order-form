@@ -14,20 +14,3 @@ button {
     border-radius: 10px;
     font-size: 1em;
 }
-
-select {
-    border: 2px solid black;
-    height: 1.5em;
-    font-size: 1em;
-}
-
-input[type=radio] {
-    margin: 20px;
-    height: 2em;
-    width: 2em;
-}
-
-input[type=checkbox] {
-    height: 2em;
-    width: 2em;
-}

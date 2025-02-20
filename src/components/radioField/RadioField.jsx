@@ -3,6 +3,8 @@
 // - radio fields with values as "key,description,key,description"
 // I wanted to pass the values as an array of objects but I could not make that work via the props
 
+import "./RadioField.css";
+
 function RadioField({name, options, checked, onChange}) {
     return (
         <p>

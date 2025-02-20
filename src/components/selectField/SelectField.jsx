@@ -4,6 +4,8 @@
 // - select dropdown control with options as "key,description,key,description"
 // I wanted to pass the options as an array of objects but I could not make that work via the props
 
+import "./SelectField.css";
+
 function SelectField({name, title, value, options, onChange}) {
     return (
         <label>

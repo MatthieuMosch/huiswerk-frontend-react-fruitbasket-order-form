@@ -3,6 +3,8 @@
 // - checkbox
 // - title
 
+import "./CheckField.css";
+
 function CheckField({name, title, checked, onChange}) {
     return (
         <p>
