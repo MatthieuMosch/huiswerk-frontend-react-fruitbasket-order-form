@@ -2,7 +2,7 @@ import {useState} from "react";
 import "./App.css";
 
 import FruitArticle from "./components/fruitAtricle/FruitArticle.jsx";
-import InputField from "./components/inoutField/InputField.jsx";
+import InputField from "./components/inputField/InputField.jsx";
 import SelectField from "./components/selectField/SelectField.jsx";
 import RadioField from "./components/radioField/RadioField.jsx";
 
