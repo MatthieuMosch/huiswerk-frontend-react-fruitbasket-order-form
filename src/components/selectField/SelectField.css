@@ -1,0 +1,6 @@
+select {
+    border: 2px solid black;
+    margin-top: 10px;
+    height: 1.5em;
+    font-size: 1em;
+}

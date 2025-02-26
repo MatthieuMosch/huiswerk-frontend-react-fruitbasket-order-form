@@ -1,0 +1,16 @@
+/*c ss reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 20px;
+}
+
+button {
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+}
